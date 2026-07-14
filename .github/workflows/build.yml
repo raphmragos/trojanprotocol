@@ -17,4 +17,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: your-docker-raphmragos/virgozki:latest
+          tags: raphmragos/virgozki:latest
