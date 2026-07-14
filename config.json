@@ -1,0 +1,51 @@
+{
+  "log": { "loglevel": "none" },
+  "inbounds": [
+    {
+      "port": 10000,
+      "listen": "127.0.0.1",
+      "protocol": "trojan",
+      "settings": { "clients": [{ "password": "virgozki" }] },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": { "path": "/virgozki" }
+      }
+    },
+    {
+      "port": 10001,
+      "listen": "127.0.0.1",
+      "protocol": "trojan",
+      "settings": { "clients": [{ "password": "virgozki" }] },
+      "streamSettings": {
+        "network": "grpc",
+        "security": "none",
+        "grpcSettings": { "serviceName": "virgozki", "mode": "gun" }
+      }
+    },
+    {
+      "port": 10002,
+      "listen": "127.0.0.1",
+      "protocol": "trojan",
+      "settings": { "clients": [{ "password": "virgozki" }] },
+      "streamSettings": {
+        "network": "httpupgrade",
+        "security": "none",
+        "httpupgradeSettings": { "path": "/virgozki-upgrade", "host": "www.google.com" }
+      }
+    },
+    {
+      "port": 10003,
+      "listen": "127.0.0.1",
+      "protocol": "trojan",
+      "settings": { "clients": [{ "password": "virgozki" }] },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "none",
+        "xhttpSettings": { "path": "/virgozki-xhttp", "host": "www.google.com", "mode": "auto" }
+      }
+    }
+  ],
+  "outbounds": [{ "protocol": "freedom" }]
+}
+
