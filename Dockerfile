@@ -15,7 +15,7 @@ RUN mkdir -p /etc/xray /run/nginx
 
 # Kopyahin ang config files papasok sa container
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY xray.json /etc/xray/config.json
+COPY xray.json /etc/xray/xray.json
 COPY entrypoint.sh /entrypoint.sh
 
 # Bigyan ng pahintulot ang entrypoint
