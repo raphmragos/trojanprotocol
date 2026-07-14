@@ -1,14 +1,15 @@
-FROM teddysun/xray:latest AS xray-bin
-FROM openresty/openresty:alpine-fat
+FROM alpine:3.18
 
-COPY --from=xray-bin /usr/bin/xray /usr/local/bin/xray
-COPY --from=xray-bin /usr/share/xray/ /usr/share/xray/
+# I-install ang Xray at Nginx
+RUN apk add --no-cache wget nginx && \
+    wget -O- https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip | unzip - && \
+    mv xray /usr/bin/ && chmod +x /usr/bin/xray
 
 COPY config.json /etc/xray.json
-COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY entrypoint.sh /entrypoint.sh
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /entrypoint.sh && mkdir -p /run/nginx
 
 EXPOSE 8080
 
