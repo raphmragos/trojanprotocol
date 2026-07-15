@@ -3,22 +3,22 @@
   "inbounds": [
     {
       "port": 10000,
-      "listen": "0.0.0.0",
+      "listen": "127.0.0.1",
       "protocol": "trojan",
       "settings": { "clients": [{ "password": "virgozki" }] },
       "streamSettings": {
         "network": "ws",
-        "wsSettings": { "path": "/virgozki" }
+        "wsSettings": { "path": "/virgozki-ws" }
       }
     },
     {
       "port": 10001,
-      "listen": "0.0.0.0",
+      "listen": "127.0.0.1",
       "protocol": "trojan",
       "settings": { "clients": [{ "password": "virgozki" }] },
       "streamSettings": {
         "network": "httpupgrade",
-        "httpupgradeSettings": { "path": "/virgozki" }
+        "httpupgradeSettings": { "path": "/virgozki-hu" }
       }
     }
   ],
