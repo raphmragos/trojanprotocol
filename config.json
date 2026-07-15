@@ -1,24 +1,28 @@
 {
-  "log": { "loglevel": "warning" },
+  "log": { "loglevel": "none" },
   "inbounds": [
     {
       "port": 10000,
       "listen": "127.0.0.1",
       "protocol": "trojan",
-      "settings": { "clients": [{ "password": "virgozki" }] },
+      "settings": {
+        "clients": [{ "password": "virgozki" }]
+      },
       "streamSettings": {
         "network": "ws",
-        "wsSettings": { "path": "/virgozki-ws" }
+        "wsSettings": { "path": "/virgozki" }
       }
     },
     {
       "port": 10001,
       "listen": "127.0.0.1",
       "protocol": "trojan",
-      "settings": { "clients": [{ "password": "virgozki" }] },
+      "settings": {
+        "clients": [{ "password": "virgozki" }]
+      },
       "streamSettings": {
         "network": "httpupgrade",
-        "httpupgradeSettings": { "path": "/virgozki-hu" }
+        "httpupgradeSettings": { "path": "/virgozki" }
       }
     }
   ],
