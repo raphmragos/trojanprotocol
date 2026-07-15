@@ -1,11 +1,14 @@
 #!/bin/sh
 set -e
 
-# Simulan ang Xray sa background
+# Simulan ang Xray
 xray run -c /etc/xray.json &
 
-# Maghintay ng 2 segundo para masiguradong handa na ang Xray
-sleep 2
+# Maghintay ng 3 segundo
+sleep 3
 
-# Simulan ang Nginx sa foreground
+# I-test muna kung gumagana ang Nginx bago tumakbo
+nginx -t
+
+# Simulan ang Nginx
 exec nginx -g 'daemon off;'
